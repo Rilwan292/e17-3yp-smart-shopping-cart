@@ -20,6 +20,7 @@ const payment = require('./routes/payment');
 
 // cart route
 const cart = require("./routes/cart");
+const tempitems = require("./routes/tempitems");
 
 
 /*
@@ -55,7 +56,7 @@ app.use('/user', authroute);            //  AUTH
 app.use('/profile', routeProfile);       //profile
 app.use('/items', itemroute);       //profile
 
-
+app.use("/tempitems", tempitems);
 
 app.use(payment);     // Payment api
 
@@ -64,10 +65,10 @@ app.use(cart);                 // cart connection
 //  HOME
 app.get('/', (req, res) => {
     res.send('hellloooo home');
-    console.log('home');
+    console.log('home');mmmmmmmmmmmmmmmmmm
 });
 
 //LISTEN
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`listening on ${port}`));
+app.listen(port, "0.0.0.0",() => console.log(`listening on ${port}`));
 
